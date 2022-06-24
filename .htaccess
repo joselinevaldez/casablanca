@@ -47,3 +47,4 @@ RewriteRule ^saveSettings backend/settings/saveSettings.php [L]
 RewriteRule ^logs$ backend/logs/index.php [L]
 RewriteRule ^profile$ backend/profile/index.php [L]
 
+#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
