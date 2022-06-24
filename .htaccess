@@ -1,0 +1,49 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+ErrorDocument 404 http://localhost:8086/casablanca/404.html
+RewriteBase /casablanca/
+Options All -Indexes
+
+RewriteRule ^$ website/index.php [L]
+RewriteRule ^login$ backend/index.php [L]
+RewriteRule ^logout$ backend/logout.php [L]
+RewriteRule ^home$ backend/home.php [L]
+RewriteRule ^customers$ backend/customers/index.php [L]
+
+RewriteRule ^measurementUnits$ backend/measurementUnits/index.php [L]
+RewriteRule ^products$ backend/products/index.php [L]
+RewriteRule ^settings$ backend/settings/index.php [L]
+RewriteRule ^reports$ backend/reports/index.php [L]
+
+#USERS
+RewriteRule ^users$ backend/users/index.php [L]
+RewriteRule ^user-edit/(.*)$ backend/users/editUser.php?id=$1 [L]
+RewriteRule ^newUser$ backend/users/newUser.php [L]
+RewriteRule ^saveEditUser$ backend/users/saveEditUser.php [L]
+RewriteRule ^deleteUser$ backend/users/deleteUser.php [L]
+#CATEGORY
+RewriteRule ^category$ backend/category/index.php [L]
+RewriteRule ^category-edit/(.*)$ backend/category/editCategory.php?id=$1 [L]
+RewriteRule ^newCategory$ backend/category/newCategory.php [L]
+RewriteRule ^saveEditCategory$ backend/category/saveEditCategory.php [L]
+RewriteRule ^deleteCategory$ backend/category/deleteCategory.php [L]
+#UNIT
+RewriteRule ^measurementUnits$ backend/measurementUnits/index.php [L]
+RewriteRule ^unit-edit/(.*)$ backend/measurementUnits/editUnit.php?id=$1 [L]
+RewriteRule ^newUnit$ backend/measurementUnits/newUnit.php [L]
+RewriteRule ^saveEditUnit$ backend/measurementUnits/saveEditUnit.php [L]
+RewriteRule ^deleteUnit$ backend/measurementUnits/deleteUnit.php [L]
+
+#CUSTOMER
+RewriteRule ^measurementUnits$ backend/measurementUnits/index.php [L]
+RewriteRule ^unit-edit/(.*)$ backend/measurementUnits/editUnit.php?id=$1 [L]
+RewriteRule ^newUnit$ backend/measurementUnits/newUnit.php [L]
+RewriteRule ^saveEditUnit$ backend/measurementUnits/saveEditUnit.php [L]
+RewriteRule ^deleteUnit$ backend/measurementUnits/deleteUnit.php [L]
+#SETTINGS
+RewriteRule ^saveSettings backend/settings/saveSettings.php [L]
+
+
+RewriteRule ^logs$ backend/logs/index.php [L]
+RewriteRule ^profile$ backend/profile/index.php [L]
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/casablanca/website/index.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/deleteUser.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/newUser.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/templates/base.tpl</file>
+            <file>file:/C:/xampp/htdocs/casablanca/404.html</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/home.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/templates/index.tpl</file>
+            <file>file:/C:/xampp/htdocs/casablanca/repository/roles.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/repository/logs.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/templates/editUser.tpl</file>
+            <file>file:/C:/xampp/htdocs/casablanca/repository/users.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/sesiones.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/website/templates_c/3509ed7ca8945d526db7a9bd98fe917a70619b74_0.file.index.tpl.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/templates/header.tpl</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/templates/sidebar.tpl</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/index.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/logout.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/connection/db.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/index.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/templates/newUser.tpl</file>
+            <file>file:/C:/xampp/htdocs/casablanca/repository/login.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/editUser.php</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/index.html</file>
+            <file>file:/C:/xampp/htdocs/casablanca/.htaccess</file>
+            <file>file:/C:/xampp/htdocs/casablanca/backend/users/saveEditUser.php</file>
+        </group>
+    </open-files>
+</project-private>
