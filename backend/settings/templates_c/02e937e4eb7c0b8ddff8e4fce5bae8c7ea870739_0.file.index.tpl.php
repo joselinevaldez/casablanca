@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2022-06-24 00:02:44
+/* Smarty version 3.1.33, created on 2022-07-01 18:57:02
   from 'C:\xampp\htdocs\casablanca\backend\settings\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_62b4e304be3c12_20471321',
+  'unifunc' => 'content_62bf275ebc6a54_50739203',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '02e937e4eb7c0b8ddff8e4fce5bae8c7ea870739' => 
     array (
       0 => 'C:\\xampp\\htdocs\\casablanca\\backend\\settings\\templates\\index.tpl',
-      1 => 1656021738,
+      1 => 1656694020,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62b4e304be3c12_20471321 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62bf275ebc6a54_50739203 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
  <!-- Page Heading -->
-
+ 
 <div class="row">
     <div class="col-lg-6">
-          <h5 class="" >Configuración</h5>              
+          <h5 class="" >Configuración General</h5>              
     </div>
    
 </div>
  <form action="/casablanca/saveSettings" name='edit' method="post" onsubmit="return saveEdit();" enctype="multipart/form-data">
  <div class="row">
      <div class="col-lg-6">
-        <div class="card shadow mb-4">
+        <div class="card shadow mb-4"  style="min-height: 530px">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-dark">Información general</h6>
@@ -80,7 +80,7 @@ echo $_smarty_tpl->tpl_vars['data']->value['phone_secondary'];
         </div>
     </div>
      <div class="col-lg-6">
-        <div class="card shadow mb-4">
+        <div class="card shadow mb-4" style="min-height: 530px">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-dark">Redes sociales</h6>
@@ -124,7 +124,7 @@ echo $_smarty_tpl->tpl_vars['data']->value['email'];
  </div>
 <div class="row">
      <div class="col-lg-6">
-        <div class="card shadow mb-4">
+        <div class="card shadow mb-4" style="min-height: 980px">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-dark">Sitio web</h6>
@@ -164,7 +164,7 @@ echo $_smarty_tpl->tpl_vars['data']->value['address'];
         </div>
     </div>
      <div class="col-lg-6">
-        <div class="card shadow mb-4">
+        <div class="card shadow mb-4" style="min-height: 980px">
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-dark">Horarios</h6>
@@ -269,8 +269,27 @@ echo $_smarty_tpl->tpl_vars['data']->value['h_domingo'];
     </div>
 
 </div>
- <hr>
- 
+
+ <div class="row">
+  
+     <div class="col-lg-12">
+         <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-dark">Ubicación</h6>
+                
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div id="googleMap" style="height: 400px;width: 100%;"></div>
+                <input class="form-control" type="hidden" id="lat" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['lat'];?>
+" name="lat">
+                <input class="form-control" type="hidden" id="long" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['lon'];?>
+" name="long">
+            </div>
+         </div>
+     </div>
+</div>
  <div class="row">
       <small class="m-l-10">Todos los campos (<span class="text-danger">*</span>) Son requeridos</small><hr>
      <div class="col-12 text-right">
@@ -279,10 +298,137 @@ echo $_smarty_tpl->tpl_vars['data']->value['h_domingo'];
      </div>
  </div>
  </form>
-                    
+<hr>
+<div class="row">
+     <div class="col-lg-12">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-dark">Servicios</h6>
+                
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12 text-right">
+                        <a class="btn btn-sm btn-warning" onclick="newServices()"><i class="fa fa-plus"></i> Agregar servicio</a>
+                    </div>
+                </div>
+                <br>
+                <?php if (is_array($_smarty_tpl->tpl_vars['services']->value) && count($_smarty_tpl->tpl_vars['services']->value) > 0) {?>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                               
+                                <th>Nombre</th>
+                                <th class='text-center' style="min-width:70px"><i class='fa fa-cog'></i></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                             <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['services']->value, 'service', false, NULL, 'services', array (
+));
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['service']->value) {
+?>
+                             <tr>
+                                                             
+                                 <td><?php echo $_smarty_tpl->tpl_vars['service']->value['name'];?>
+</td>                   
+                                 <td style="min-width:70px;text-align: center">
+                                    <a class="btn btn-sm btn-danger btn-config" onclick="confirmDelete('<?php echo $_smarty_tpl->tpl_vars['service']->value['configuration_services_id'];?>
+','<?php echo $_smarty_tpl->tpl_vars['service']->value['name'];?>
+')" title='Eliminar' ><i class="fas fa-trash"></i></a>
+                                    
+                                  </td>
+                             </tr>
+                             <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            <?php } else { ?>
+                <div class="row justify-content-lg-center">
+                    <div class="col-lg-12 text-center p-65">
+                        <h6><i class="fas fa-book-open"></i></h6>
+                        <h6>No se encontraron registro</h6>
+                        <small>Para agregar un nuevo servicio da click en el botón (+) de la esquina superior derecha</small>
+                    </div>
+                </div>
+            <?php }?>
+            
+            </div>
+        </div>
+     </div>
+    
+</div>
+ <div class="modal fade" id="newServicesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form action="/casablanca/saveServices" method="POST" onsubmit="return saveServices();">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo servicio</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="form-group">
+                    <label><span class="text-danger">*</span> Nombre</label>
+                    <input type="text" name="name" class="form-control" required>
+                   
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="btn-services">Guardar</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div> 
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form action="/casablanca/deleteServices" method="POST" onsubmit="return deleteServices();">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar sevicio</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="configuration_services_id" name="id">
+                ¿Estas seguro de que quieres eliminar el servicio "<b id="servicesDelete"></b>" ?
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="btn-delete">Eliminar</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>           
  
+       <!-- Google Map API Key-->
+    <?php echo '<script'; ?>
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZwC5HHUTHvH5hZ6L5dBtnzYaHcy6gfgo" defer><?php echo '</script'; ?>
+>
     <?php echo '<script'; ?>
 >
+           // Inicializando el mapa cuando se carga la página
+    window.onload = function() {
+      initializeMap();
+    };
     function activar_descanso(dia){
         var checked = $('#check_'+dia).prop('checked');
         if(checked){
@@ -327,6 +473,65 @@ echo $_smarty_tpl->tpl_vars['data']->value['h_domingo'];
         //enviando post
 
     }
+    
+    function newServices(){
+         $('#newServicesModal').modal('show');
+    }
+    
+     function saveServices(){
+        $('#btn-services').prop('disabled',true);
+        $('#btn-services').html('<i class="fas fa-spin fa-spinner"></i> Guardando');
+    }
+    function confirmDelete(id, name){       
+        $('#configuration_services_id').val(id);
+        $('#servicesDelete').html(name);
+        $('#deleteModal').modal('show');
+    }
+    
+    function deleteServices(){
+        $('#btn-delete').prop('disabled',true);
+        $('#btn-delete').html('<i class="fas fa-spin fa-spinner"></i> Eliminando');
+    }
+    
+    function initializeMap() {
+       
+        var lat = 25.7503705;
+        if($('#lat').val() != ''){
+            lat = $('#lat').val();
+        }
+        var lon = -108.8148044;
+          if($('#long').val() != ''){
+            lon = $('#long').val();
+        }
+        console.log(lat);
+        console.log(lon);
+        // Configuración del mapa
+        var mapProp = {
+          center: new google.maps.LatLng(lat, lon),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        // Agregando el mapa al tag de id googleMap
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+       
+        // Creando un marker en el mapa
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(lat,lon),
+          map: map,
+          title: 'Casa Blanca',
+          draggable: true //que el marcador se pueda arrastrar
+        });
+      
+        // Registrando el evento drag, en este caso imprime 
+        // en consola la latitud y longitud
+        google.maps.event.addListener(marker,'drag',function(event) {
+          $('#lat').val(event.latLng.lat());
+          $('#long').val(event.latLng.lng());
+        });
+      
+      }
+       
+   
   <?php echo '</script'; ?>
 >
 <?php }

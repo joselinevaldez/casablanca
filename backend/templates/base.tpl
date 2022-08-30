@@ -24,6 +24,7 @@
     <link href="public/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="public/assets/css/toastr/toastr.min.css" rel="stylesheet">
     <link href="public/assets/css/sweetalert/sweetalert.min.css" rel="stylesheet">
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 </head>
 
 <body id="page-top">
@@ -122,7 +123,6 @@
     <script src="public/js/toastr/toastr.init.js"></script>
     <!--SWEETALERT-->
     <script src="public/js/sweetalert/sweetalert.min.js"></script>
-    
     <script>
      {if $errors != ''}
          {if $errors.type == 'error'}

@@ -20,7 +20,7 @@
             <h6 class="m-0 font-weight-bold text-secondary">Listado de usuarios</h6>
         </div>
         <div class="card-body">
-            {if $list|@count > 0}
+            {if is_array($list) and $list|@count > 0}
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2022-06-24 00:14:45
+/* Smarty version 3.1.33, created on 2022-07-01 19:00:27
   from 'C:\xampp\htdocs\casablanca\website\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_62b4e5d5c8a745_66617536',
+  'unifunc' => 'content_62bf282b4462f1_67556224',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3424d476fd3e7d3fcbe9df8b02443cdbcdf9766' => 
     array (
       0 => 'C:\\xampp\\htdocs\\casablanca\\website\\templates\\index.tpl',
-      1 => 1656022484,
+      1 => 1656694825,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62b4e5d5c8a745_66617536 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62bf282b4462f1_67556224 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +57,11 @@ function content_62b4e5d5c8a745_66617536 (Smarty_Internal_Template $_smarty_tpl)
   <!-- Template styles-->
   <link rel="stylesheet" href="public/css/style.css">
      <link href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" rel="stylesheet"/>
+     <style>
+         .footer-widget ul.list-arrow li:hover {
+            color: #999 !important;
+          }
+     </style>
 </head>
 <body>
   <div class="body-inner">
@@ -158,65 +163,37 @@ echo $_smarty_tpl->tpl_vars['data']->value['logo_path'];
 <!--/ Header end -->
 
 <div class="banner-carousel banner-carousel-1 mb-0">
-  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(public/images/slider-main/bg1.jpg);background-size: cover;
+    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['banners']->value, 'banner', false, NULL, 'banners', array (
+));
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['banner']->value) {
+?>
+        
+  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(backend/banner/files/<?php echo $_smarty_tpl->tpl_vars['banner']->value['imagen_path'];?>
+);background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;">
     <div class="slider-content">
         <div class="container h-100">
           <div class="row align-items-center h-100">
               <div class="col-md-12 text-center">
-                <h2 class="slide-title" data-animation-in="slideInLeft">La mejor relación CALIDAD-SABOR-PRECIO</h2>
-                <h3 class="slide-sub-title" data-animation-in="slideInRight">Casa Blanca</h3>
+                <h2 class="slide-title" data-animation-in="slideInLeft"><?php echo $_smarty_tpl->tpl_vars['banner']->value['title'];?>
+</h2>
+                <h3 class="slide-sub-title" data-animation-in="slideInRight"><?php echo $_smarty_tpl->tpl_vars['banner']->value['subtitle'];?>
+</h3>
                 <p data-animation-in="slideInLeft" data-duration-in="1.2">
                    
-                    <a href="tel:<?php echo $_smarty_tpl->tpl_vars['data']->value['phone'];?>
-" class="slider btn btn-primary border">ORDERNAR AHORA</a>
-                </p>
+                                    </p>
               </div>
           </div>
         </div>
     </div>
   </div>
-
-  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(public/images/slider-main/bg2.jpg);background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;">
-    <div class="slider-content text-left">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-            <div class="col-md-12 text-center">
-              <h2 class="slide-title" data-animation-in="slideInLeft">Disfruta del mejor sabor</h2>
-              <h3 class="slide-sub-title" data-animation-in="slideInRight">HAMBURGUESAS</h3>
-               <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                   
-                    <a href="tel:<?php echo $_smarty_tpl->tpl_vars['data']->value['phone'];?>
-" class="slider btn btn-primary border">ORDERNAR AHORA</a>
-                </p>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(public/images/slider-main/bg4.jpg);background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;">
-    <div class="slider-content text-right">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-            <div class="col-md-12 text-center">
-              <h2 class="slide-title" data-animation-in="slideInLeft">¿Ya los probaste?</h2>
-              <h3 class="slide-sub-title" data-animation-in="slideInRight">ALITAS Y BONELESS</h3>
-               <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                   
-                    <a href="tel:<?php echo $_smarty_tpl->tpl_vars['data']->value['phone'];?>
-" class="slider btn btn-primary border">ORDERNAR AHORA</a>
-                </p>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
+<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 </div>
 
@@ -331,13 +308,16 @@ echo $_smarty_tpl->tpl_vars['data']->value['logo_path'];
       <div class="col-12">
         
         <h3 class="section-sub-title" style='margin-bottom: 0px;' id="section-mapa">UBICACIÓN</h3>
-        <a target='_blank' style="margin-bottom: 10px" class='btn btn-warning' href='https://goo.gl/maps/qS5x8U577VYG2u8h9'>Abrir en google maps</a>
+        <!--<a target='_blank' style="margin-bottom: 10px" class='btn btn-warning' href='https://goo.gl/maps/qS5x8U577VYG2u8h9'>Abrir en google maps</a>-->
         
       </div>
     </div>
+    <br>
     <div>
-       
-       <div id="map_picker" style='height: 400px; '></div>
+        
+        <div class="google-map">
+      <div id="googleMap" style="height:500px"></div>
+    </div>
     </div>
   </section>
 
@@ -403,12 +383,18 @@ echo $_smarty_tpl->tpl_vars['data']->value['logo_path'];
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
             <h3 class="widget-title">Servicios</h3>
             <ul class="list-arrow">
-              <li>Hamburguesas</li>
-              <li>Tortas</li>
-              <li>Alitas</li>
-              <li>Boneless</li>
-              <li>Papas fritas</li>
-              <li>Dedos de queso</li>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['services']->value, 'service', false, NULL, 'services', array (
+));
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['service']->value) {
+?>
+                    <li><?php echo $_smarty_tpl->tpl_vars['service']->value['name'];?>
+</li>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </ul>
           </div><!-- Col end -->
         </div><!-- Row end -->
@@ -477,28 +463,14 @@ echo $_smarty_tpl->tpl_vars['data']->value['logo_path'];
   <?php echo '<script'; ?>
  src="public/js/script.js"><?php echo '</script'; ?>
 >
- <!-- Make sure you put this AFTER Leaflet's CSS -->
-<?php echo '<script'; ?>
- src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- src="public/plugins/google-map/Control.OSMGeocoder.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="public/plugins/google-map/OSMLocationPicker.js"><?php echo '</script'; ?>
+    <!-- Google Map API Key-->
+  <?php echo '<script'; ?>
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZwC5HHUTHvH5hZ6L5dBtnzYaHcy6gfgo" defer><?php echo '</script'; ?>
 >
   <?php echo '<script'; ?>
 >
     $(document).ready(function() {
-                var map = OSMPICKER.initmappicker(25.7502315,-108.8144257, 100, {
-                        addressId: "address",
-                        latitudeId: "latitude",
-                        longitudeId: "longitude",
-                        radiusId: "radius",
-                        mapId: "map_picker",
-                        zoom:18
-                });
-      
+        initializeMap();
                 $('a[href^="#"]').click(function() {
                   var destino = $(this.hash);
                   if (destino.length == 0) {
@@ -510,7 +482,37 @@ echo $_smarty_tpl->tpl_vars['data']->value['logo_path'];
                   $('html, body').animate({ scrollTop: destino.offset().top }, 500);
                   return false;
                 });
-            });
+    });
+            
+    function initializeMap() {
+       
+        var lat = 25.7503705;
+        <?php if ($_smarty_tpl->tpl_vars['data']->value['lat'] <> '') {?>
+            lat = '<?php echo $_smarty_tpl->tpl_vars['data']->value['lat'];?>
+';
+        <?php }?>
+        var lon = -108.8148044;
+        <?php if ($_smarty_tpl->tpl_vars['data']->value['lon'] <> '') {?>
+            lon ='<?php echo $_smarty_tpl->tpl_vars['data']->value['lon'];?>
+';
+        <?php }?>
+        // Configuración del mapa
+        var mapProp = {
+          center: new google.maps.LatLng(lat, lon),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        // Agregando el mapa al tag de id googleMap
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+       
+        // Creando un marker en el mapa
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(lat,lon),
+          map: map,
+          title: 'Casa Blanca',
+          draggable: false //que el marcador se pueda arrastrar
+        });
+    }
   <?php echo '</script'; ?>
 >
   </div><!-- Body inner end -->

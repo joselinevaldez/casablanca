@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2022-06-02 23:18:35
+/* Smarty version 3.1.33, created on 2022-07-06 01:52:47
   from 'C:\xampp\htdocs\casablanca\backend\users\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_6299292b728df1_00275594',
+  'unifunc' => 'content_62c4cecfd8a3e4_85835590',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6661f463103d3ac4da76fe2801a74c9c68ae8619' => 
     array (
       0 => 'C:\\xampp\\htdocs\\casablanca\\backend\\users\\templates\\index.tpl',
-      1 => 1654204711,
+      1 => 1656524250,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6299292b728df1_00275594 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c4cecfd8a3e4_85835590 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
  <!-- Page Heading -->
 
@@ -43,7 +43,7 @@ function content_6299292b728df1_00275594 (Smarty_Internal_Template $_smarty_tpl)
             <h6 class="m-0 font-weight-bold text-secondary">Listado de usuarios</h6>
         </div>
         <div class="card-body">
-            <?php if (count($_smarty_tpl->tpl_vars['list']->value) > 0) {?>
+            <?php if (is_array($_smarty_tpl->tpl_vars['list']->value) && count($_smarty_tpl->tpl_vars['list']->value) > 0) {?>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>

@@ -8,12 +8,16 @@ class measurementUnits {
         
     }
 
-    public function getMeasurementUnits(){
+    public function getMeasurementUnits($orderASC=false){
         try{
           
             if($this->db->connection()){
                 $data = array();
-                $query = "SELECT * from measurement_unit WHERE is_active <> 2; ";
+                $order = "";
+                if($orderASC){
+                    $order = " ORDER BY name ASC";
+                }
+                $query = "SELECT * from measurement_unit WHERE is_active <> 2 $order; ";
                 
                 $result = $this->db->connection()->query($query);
                 while($row=$result->fetch_assoc()){

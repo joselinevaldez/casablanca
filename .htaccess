@@ -8,11 +8,9 @@ RewriteRule ^$ website/index.php [L]
 RewriteRule ^login$ backend/index.php [L]
 RewriteRule ^logout$ backend/logout.php [L]
 RewriteRule ^home$ backend/home.php [L]
-RewriteRule ^customers$ backend/customers/index.php [L]
+
 
 RewriteRule ^measurementUnits$ backend/measurementUnits/index.php [L]
-RewriteRule ^products$ backend/products/index.php [L]
-RewriteRule ^settings$ backend/settings/index.php [L]
 RewriteRule ^reports$ backend/reports/index.php [L]
 
 #USERS
@@ -35,14 +33,46 @@ RewriteRule ^saveEditUnit$ backend/measurementUnits/saveEditUnit.php [L]
 RewriteRule ^deleteUnit$ backend/measurementUnits/deleteUnit.php [L]
 
 #CUSTOMER
-RewriteRule ^measurementUnits$ backend/measurementUnits/index.php [L]
-RewriteRule ^unit-edit/(.*)$ backend/measurementUnits/editUnit.php?id=$1 [L]
-RewriteRule ^newUnit$ backend/measurementUnits/newUnit.php [L]
-RewriteRule ^saveEditUnit$ backend/measurementUnits/saveEditUnit.php [L]
-RewriteRule ^deleteUnit$ backend/measurementUnits/deleteUnit.php [L]
+RewriteRule ^customers$ backend/customers/index.php [L]
+RewriteRule ^customer-edit/(.*)$ backend/customers/editCustomer.php?id=$1 [L]
+RewriteRule ^newCustomer$ backend/customers/newCustomer.php [L]
+RewriteRule ^saveEditCustomer$ backend/customers/saveEditCustomer.php [L]
+RewriteRule ^deleteCustomer$ backend/customers/deleteCustomer.php [L]
+RewriteRule ^newAddress$ backend/customers/newAddress.php [L]
+RewriteRule ^editAddress$ backend/customers/editAddress.php [L]
+RewriteRule ^deleteAddress$ backend/customers/deleteAddress.php [L]
 #SETTINGS
+RewriteRule ^settings$ backend/settings/index.php [L]
 RewriteRule ^saveSettings backend/settings/saveSettings.php [L]
+RewriteRule ^saveServices backend/settings/saveServices.php [L]
+RewriteRule ^deleteServices$ backend/settings/deleteServices.php [L]
+#BANNER
+RewriteRule ^banner$ backend/banner/index.php [L]
+RewriteRule ^newBanner$ backend/banner/newBanner.php [L]
+RewriteRule ^deleteBanner$ backend/banner/deleteBanner.php [L]
+RewriteRule ^banner-edit/(.*)$ backend/banner/editBanner.php?id=$1 [L]
+RewriteRule ^saveEditBanner$ backend/banner/saveEditBanner.php [L]
 
+#PRODUCT
+RewriteRule ^products$ backend/products/index.php [L]
+RewriteRule ^product-edit/(.*)$ backend/products/editProduct.php?id=$1 [L]
+RewriteRule ^newProduct$ backend/products/newProduct.php [L]
+RewriteRule ^saveEditProduct$ backend/products/saveEditProduct.php [L]
+RewriteRule ^deleteProduct$ backend/products/deleteProduct.php [L]
+
+#COMBO
+RewriteRule ^combos$ backend/combo/index.php [L]
+RewriteRule ^combo-edit/(.*)$ backend/combo/editCombo.php?id=$1 [L]
+RewriteRule ^newCombo$ backend/combo/newCombo.php [L]
+RewriteRule ^saveEditCombo$ backend/combo/saveEditCombo.php [L]
+RewriteRule ^deleteCombo$ backend/combo/deleteCombo.php [L]
+
+#PAQUETES
+RewriteRule ^paquetes$ backend/paquetes/index.php [L]
+RewriteRule ^paquete-edit/(.*)$ backend/paquetes/editPaquete.php?id=$1 [L]
+RewriteRule ^newPaquete$ backend/paquetes/newPaquete.php [L]
+RewriteRule ^saveEditPaquete$ backend/paquetes/saveEditPaquete.php [L]
+RewriteRule ^deletePaquete backend/paquetes/deletePaquete.php [L]
 
 RewriteRule ^logs$ backend/logs/index.php [L]
 RewriteRule ^profile$ backend/profile/index.php [L]

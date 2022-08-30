@@ -11,6 +11,10 @@
 
  $setting = new settings();
  $result = $setting->getSettings();
+ $banners = $setting->getBanners();
+ $services = $setting->getServices();
  $html->assign("data", $result['data']);
+ $html->assign("banners", $banners['list']);
+ $html->assign("services", $services['list']);
  $html->display("index.tpl");
 ?>

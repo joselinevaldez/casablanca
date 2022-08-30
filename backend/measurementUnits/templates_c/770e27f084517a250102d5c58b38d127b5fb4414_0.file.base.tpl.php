@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2022-06-08 01:30:05
+/* Smarty version 3.1.33, created on 2022-07-06 01:52:42
   from 'C:\xampp\htdocs\casablanca\backend\templates\base.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_629fdf7ded45d8_07980832',
+  'unifunc' => 'content_62c4cecaead3f3_94659483',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '770e27f084517a250102d5c58b38d127b5fb4414' => 
     array (
       0 => 'C:\\xampp\\htdocs\\casablanca\\backend\\templates\\base.tpl',
-      1 => 1654204683,
+      1 => 1656692235,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_629fdf7ded45d8_07980832 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c4cecaead3f3_94659483 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +47,7 @@ function content_629fdf7ded45d8_07980832 (Smarty_Internal_Template $_smarty_tpl)
     <link href="public/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="public/assets/css/toastr/toastr.min.css" rel="stylesheet">
     <link href="public/assets/css/sweetalert/sweetalert.min.css" rel="stylesheet">
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 </head>
 
 <body id="page-top">
@@ -168,7 +169,6 @@ function content_629fdf7ded45d8_07980832 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="public/js/sweetalert/sweetalert.min.js"><?php echo '</script'; ?>
 >
-    
     <?php echo '<script'; ?>
 >
      <?php if ($_smarty_tpl->tpl_vars['errors']->value != '') {?>

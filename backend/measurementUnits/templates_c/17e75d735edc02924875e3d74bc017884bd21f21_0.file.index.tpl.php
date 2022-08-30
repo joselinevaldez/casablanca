@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2022-06-24 01:11:25
+/* Smarty version 3.1.33, created on 2022-07-06 01:52:43
   from 'C:\xampp\htdocs\casablanca\backend\measurementUnits\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_62b4f31dbf1353_64010319',
+  'unifunc' => 'content_62c4cecb2ad7c7_65199099',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '17e75d735edc02924875e3d74bc017884bd21f21' => 
     array (
       0 => 'C:\\xampp\\htdocs\\casablanca\\backend\\measurementUnits\\templates\\index.tpl',
-      1 => 1656025618,
+      1 => 1656524238,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62b4f31dbf1353_64010319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62c4cecb2ad7c7_65199099 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
  <!-- Page Heading -->
 
@@ -43,7 +43,7 @@ function content_62b4f31dbf1353_64010319 (Smarty_Internal_Template $_smarty_tpl)
             <h6 class="m-0 font-weight-bold text-secondary">Listado de unidades de medida</h6>
         </div>
         <div class="card-body">
-            <?php if (count($_smarty_tpl->tpl_vars['list']->value) > 0) {?>
+            <?php if (is_array($_smarty_tpl->tpl_vars['list']->value) && count($_smarty_tpl->tpl_vars['list']->value) > 0) {?>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>

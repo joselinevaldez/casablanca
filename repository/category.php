@@ -8,12 +8,16 @@ class category {
         
     }
 
-    public function getCategories(){
+    public function getCategories($orderASC = false){
         try{
           
             if($this->db->connection()){
                 $data = array();
-                $query = "SELECT * from category WHERE is_active <> 2; ";
+                $order = "";
+                if($orderASC){
+                    $order = " ORDER BY name ASC";
+                }
+                $query = "SELECT * from category WHERE is_active <> 2 $order; ";
                 
                 $result = $this->db->connection()->query($query);
                 while($row=$result->fetch_assoc()){

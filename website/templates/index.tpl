@@ -33,6 +33,11 @@
   <!-- Template styles-->
   <link rel="stylesheet" href="public/css/style.css">
      <link href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" rel="stylesheet"/>
+     <style>
+         .footer-widget ul.list-arrow li:hover {
+            color: #999 !important;
+          }
+     </style>
 </head>
 <body>
   <div class="body-inner">
@@ -128,62 +133,27 @@
 <!--/ Header end -->
 
 <div class="banner-carousel banner-carousel-1 mb-0">
-  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(public/images/slider-main/bg1.jpg);background-size: cover;
+    {foreach name=banners from=$banners item=banner}
+        
+  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(backend/banner/files/{$banner.imagen_path});background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;">
     <div class="slider-content">
         <div class="container h-100">
           <div class="row align-items-center h-100">
               <div class="col-md-12 text-center">
-                <h2 class="slide-title" data-animation-in="slideInLeft">La mejor relación CALIDAD-SABOR-PRECIO</h2>
-                <h3 class="slide-sub-title" data-animation-in="slideInRight">Casa Blanca</h3>
+                <h2 class="slide-title" data-animation-in="slideInLeft">{$banner.title}</h2>
+                <h3 class="slide-sub-title" data-animation-in="slideInRight">{$banner.subtitle}</h3>
                 <p data-animation-in="slideInLeft" data-duration-in="1.2">
                    
-                    <a href="tel:{$data.phone}" class="slider btn btn-primary border">ORDERNAR AHORA</a>
+                    {*<!--<a href="tel:{$data.phone}" class="slider btn btn-primary border">ORDERNAR AHORA</a>-->*}
                 </p>
               </div>
           </div>
         </div>
     </div>
   </div>
-
-  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(public/images/slider-main/bg2.jpg);background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;">
-    <div class="slider-content text-left">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-            <div class="col-md-12 text-center">
-              <h2 class="slide-title" data-animation-in="slideInLeft">Disfruta del mejor sabor</h2>
-              <h3 class="slide-sub-title" data-animation-in="slideInRight">HAMBURGUESAS</h3>
-               <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                   
-                    <a href="tel:{$data.phone}" class="slider btn btn-primary border">ORDERNAR AHORA</a>
-                </p>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-  <div class="banner-carousel-item" style="background:linear-gradient(0deg,rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(public/images/slider-main/bg4.jpg);background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;">
-    <div class="slider-content text-right">
-        <div class="container h-100">
-          <div class="row align-items-center h-100">
-            <div class="col-md-12 text-center">
-              <h2 class="slide-title" data-animation-in="slideInLeft">¿Ya los probaste?</h2>
-              <h3 class="slide-sub-title" data-animation-in="slideInRight">ALITAS Y BONELESS</h3>
-               <p data-animation-in="slideInLeft" data-duration-in="1.2">
-                   
-                    <a href="tel:{$data.phone}" class="slider btn btn-primary border">ORDERNAR AHORA</a>
-                </p>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
+{/foreach}
 
 </div>
 
@@ -295,13 +265,16 @@
       <div class="col-12">
         
         <h3 class="section-sub-title" style='margin-bottom: 0px;' id="section-mapa">UBICACIÓN</h3>
-        <a target='_blank' style="margin-bottom: 10px" class='btn btn-warning' href='https://goo.gl/maps/qS5x8U577VYG2u8h9'>Abrir en google maps</a>
+        <!--<a target='_blank' style="margin-bottom: 10px" class='btn btn-warning' href='https://goo.gl/maps/qS5x8U577VYG2u8h9'>Abrir en google maps</a>-->
         
       </div>
     </div>
+    <br>
     <div>
-       
-       <div id="map_picker" style='height: 400px; '></div>
+        
+        <div class="google-map">
+      <div id="googleMap" style="height:500px"></div>
+    </div>
     </div>
   </section>
 
@@ -351,12 +324,9 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
             <h3 class="widget-title">Servicios</h3>
             <ul class="list-arrow">
-              <li>Hamburguesas</li>
-              <li>Tortas</li>
-              <li>Alitas</li>
-              <li>Boneless</li>
-              <li>Papas fritas</li>
-              <li>Dedos de queso</li>
+                {foreach name=services from=$services item=service}
+                    <li>{$service.name}</li>
+                {/foreach}
             </ul>
           </div><!-- Col end -->
         </div><!-- Row end -->
@@ -409,21 +379,11 @@
 
   <!-- Template custom -->
   <script src="public/js/script.js"></script>
- <!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-<script src="public/plugins/google-map/Control.OSMGeocoder.js"></script>
-    <script src="public/plugins/google-map/OSMLocationPicker.js"></script>
+    <!-- Google Map API Key-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZwC5HHUTHvH5hZ6L5dBtnzYaHcy6gfgo" defer></script>
   <script>
     $(document).ready(function() {
-                var map = OSMPICKER.initmappicker(25.7502315,-108.8144257, 100, {
-                        addressId: "address",
-                        latitudeId: "latitude",
-                        longitudeId: "longitude",
-                        radiusId: "radius",
-                        mapId: "map_picker",
-                        zoom:18
-                });
-      
+        initializeMap();
                 $('a[href^="#"]').click(function() {
                   var destino = $(this.hash);
                   if (destino.length == 0) {
@@ -435,7 +395,35 @@
                   $('html, body').animate({ scrollTop: destino.offset().top }, 500);
                   return false;
                 });
-            });
+    });
+            
+    function initializeMap() {
+       
+        var lat = 25.7503705;
+        {if $data.lat <> ''}
+            lat = '{$data.lat}';
+        {/if}
+        var lon = -108.8148044;
+        {if $data.lon <> ''}
+            lon ='{$data.lon}';
+        {/if}
+        // Configuración del mapa
+        var mapProp = {
+          center: new google.maps.LatLng(lat, lon),
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        // Agregando el mapa al tag de id googleMap
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+       
+        // Creando un marker en el mapa
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(lat,lon),
+          map: map,
+          title: 'Casa Blanca',
+          draggable: false //que el marcador se pueda arrastrar
+        });
+    }
   </script>
   </div><!-- Body inner end -->
   </body>

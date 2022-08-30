@@ -45,11 +45,32 @@
                 <i class="fas fa-fw fa-table"></i>
                 <span>Productos</span></a>
         </li>
+          <hr class="sidebar-divider">
+        <li class="nav-item " >
+            <a class="nav-link" href="/casablanca/paquetes" style='padding-top: 0px;padding-bottom: 10px;'>
+                <i class="fas fa-fw fa-cubes"></i>
+                <span>Paquetes</span></a>
+        </li>
          <hr class="sidebar-divider">
         <li class="nav-item " >
-            <a class="nav-link" href="/casablanca/settings" style='padding-top: 0px;padding-bottom: 10px;'>
+            <a class="nav-link" href="/casablanca/combos" style='padding-top: 0px;padding-bottom: 10px;'>
+                <i class="fas fa-fw fa-list"></i>
+                <span>Combos</span></a>
+        </li>
+         <hr class="sidebar-divider">
+      
+          <li class="nav-item">
+            <a class="nav-link collapsed active" href="#" data-toggle="collapse" data-target="#collapseConf"
+                aria-expanded="true" aria-controls="collapseConf" style='padding-top: 0px;padding-bottom: 10px;'>
                 <i class="fas fa-fw fa-cogs"></i>
-                <span>Configuraciones</span></a>
+               <span>Configuraciones</span></a>
+            </a>
+            <div id="collapseConf" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="text-white py-2 collapse-inner rounded">                  
+                    <a class="collapse-item text-white" href="/casablanca/settings">General</a>
+                    <a class="collapse-item text-white" href="/casablanca/banner">Banner</a>
+                </div>
+            </div>
         </li>
          <hr class="sidebar-divider">
         <li class="nav-item " >
@@ -71,7 +92,6 @@
             <div id="collapseSecurity" class="collapse" aria-labelledby="headingSecurity" data-parent="#accordionSidebar">
                 <div class="text-white py-2 collapse-inner rounded">                  
                     <a class="collapse-item text-white" href="/casablanca/users">Usuarios</a>
-                    <a class="collapse-item text-white" href="/casablanca/logs">Actividades del sistema</a>
                 </div>
             </div>
         </li>

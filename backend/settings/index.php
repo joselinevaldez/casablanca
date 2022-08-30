@@ -8,13 +8,14 @@
   /*OBTENEMOS CONFIGURACIÓN*/
  $setting = new settings();
  $result = $setting->getSettings();
- 
+ $services = $setting->getServices();
  $errors = $_SESSION['errors'];
  /* LIMPIAMOS LOS ERRORES */
  $_SESSION['errors'] = "";
  
  /*INFORMACIÓN BASE*/
  $html->assign('errors', $errors);
+ $html->assign('services',$services['list']);
  $html->assign('data', $result['data']);
  $html->assign('section','templates/index');
  $html->assign('sidebar','../templates/sidebar');
@@ -23,5 +24,12 @@
  
  //casablancasnacks01
  //casablanca2022
+ 
+ //sitio
+ //casablancasnacks
+ //casablanca2022
+ 
+ //sysadmin
+ //obqjr*6>aKJ<iPfh
 ?>
 

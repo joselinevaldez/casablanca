@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2022-06-02 22:57:34
+/* Smarty version 3.1.33, created on 2022-08-03 23:02:26
   from 'C:\xampp\htdocs\casablanca\backend\templates\sidebar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_6299243ebb8212_07847521',
+  'unifunc' => 'content_62eae262173699_08879134',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cc18da3491544221bdf64ced6503a7c4b74178bf' => 
     array (
       0 => 'C:\\xampp\\htdocs\\casablanca\\backend\\templates\\sidebar.tpl',
-      1 => 1654203016,
+      1 => 1659476774,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6299243ebb8212_07847521 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62eae262173699_08879134 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
@@ -68,11 +68,32 @@ function content_6299243ebb8212_07847521 (Smarty_Internal_Template $_smarty_tpl)
                 <i class="fas fa-fw fa-table"></i>
                 <span>Productos</span></a>
         </li>
+          <hr class="sidebar-divider">
+        <li class="nav-item " >
+            <a class="nav-link" href="/casablanca/paquetes" style='padding-top: 0px;padding-bottom: 10px;'>
+                <i class="fas fa-fw fa-cubes"></i>
+                <span>Paquetes</span></a>
+        </li>
          <hr class="sidebar-divider">
         <li class="nav-item " >
-            <a class="nav-link" href="/casablanca/settings" style='padding-top: 0px;padding-bottom: 10px;'>
+            <a class="nav-link" href="/casablanca/combos" style='padding-top: 0px;padding-bottom: 10px;'>
+                <i class="fas fa-fw fa-list"></i>
+                <span>Combos</span></a>
+        </li>
+         <hr class="sidebar-divider">
+      
+          <li class="nav-item">
+            <a class="nav-link collapsed active" href="#" data-toggle="collapse" data-target="#collapseConf"
+                aria-expanded="true" aria-controls="collapseConf" style='padding-top: 0px;padding-bottom: 10px;'>
                 <i class="fas fa-fw fa-cogs"></i>
-                <span>Configuraciones</span></a>
+               <span>Configuraciones</span></a>
+            </a>
+            <div id="collapseConf" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="text-white py-2 collapse-inner rounded">                  
+                    <a class="collapse-item text-white" href="/casablanca/settings">General</a>
+                    <a class="collapse-item text-white" href="/casablanca/banner">Banner</a>
+                </div>
+            </div>
         </li>
          <hr class="sidebar-divider">
         <li class="nav-item " >
@@ -94,7 +115,6 @@ function content_6299243ebb8212_07847521 (Smarty_Internal_Template $_smarty_tpl)
             <div id="collapseSecurity" class="collapse" aria-labelledby="headingSecurity" data-parent="#accordionSidebar">
                 <div class="text-white py-2 collapse-inner rounded">                  
                     <a class="collapse-item text-white" href="/casablanca/users">Usuarios</a>
-                    <a class="collapse-item text-white" href="/casablanca/logs">Actividades del sistema</a>
                 </div>
             </div>
         </li>

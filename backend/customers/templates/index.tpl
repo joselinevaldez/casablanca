@@ -20,17 +20,14 @@
             <h6 class="m-0 font-weight-bold text-secondary">Listado de clientes</h6>
         </div>
         <div class="card-body">
-            {if $list|@count > 0}
+            {if is_array($list) and $list|@count > 0}
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nombre completo</th>
-                                <th>Alias</th>                              
-                                <th>Teléfono</th>
-                                <th>Email</th>
-                                <th>Notas</th>
+                                <th>Nombre</th>                          
+                                <th>Contacto</th>
                                 <th>Dirección principal</th>
                                 <th>Estatus</th>
                                 <th>Fecha de creación</th>
@@ -42,13 +39,13 @@
                         <tbody>
                              {foreach name=customers from=$list item=customer}
                              <tr>
-                                 <td>{$customer.customer_id }</td>                                
-                                 <td>{$customer.name}</td>
-                                 <td>{$customer.alias}</td>
-                                 <td>{$customer.phone}</td>
-                                 <td>{$customer.email}</td>
-                                 <td>{$customer.description}</td>
-                                 <td></td>
+                                 <td>{$customer.client_id }</td>                                
+                                 <td>{$customer.name}<br>
+                                    {if $customer.alias != ''} <span title="Alias" class='badge badge-info'>{$customer.alias}</span>{/if}
+                                 </td>
+                                 <td>{$customer.phone}<br>
+                                 {$customer.email}</td>
+                                 <td>{$customer.address}</td>
                                  <td>{if $customer.is_active == 0}<span class='badge badge-warning'>Inactivo</span>
                                      {elseif $customer.is_active == 1}<span class='badge badge-success'>Activo</span>
                                      {elseif $customer.is_active == 2}<span class='badge badge-danger'>Eliminado</span>
@@ -57,8 +54,8 @@
                                  <td>{$customer.updated_at}</td>                            
 
                                  <td style="min-width:70px">
-                                    <a class="btn btn-sm btn-danger btn-config" onclick="confirmDelete('{$customer.customer_id }', '{$customer.name}');" title='Eliminar' ><i class="fas fa-trash"></i></a>
-                                    <a class="btn btn-sm btn-dark btn-config" href='/casablanca/unit-customer/{$customer.customer_id }' title='Editar'><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-sm btn-danger btn-config" onclick="confirmDelete('{$customer.client_id }', '{$customer.name}');" title='Eliminar' ><i class="fas fa-trash"></i></a>
+                                    <a class="btn btn-sm btn-dark btn-config" href='/casablanca/customer-edit/{$customer.client_id }' title='Editar'><i class="fas fa-edit"></i></a>
                                   </td>
                              </tr>
                              {/foreach}

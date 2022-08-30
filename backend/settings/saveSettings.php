@@ -56,7 +56,9 @@
                   h_jueves = '$data->h_jueves', 
                   h_viernes = '$data->h_viernes', 
                   h_sabado = '$data->h_sabado', 
-                  h_domingo = '$data->h_domingo' 
+                  h_domingo = '$data->h_domingo' ,
+                  lat = '$data->lat',
+                  lon = '$data->long'
                   WHERE configuration_id = '1'";
        
         if($db->connection()->query($query)){

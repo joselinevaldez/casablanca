@@ -227,18 +227,10 @@ function initialize() {
   ];
   var mapOptions = {
     center: nottingham,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    backgroundColor: "#000",
-    zoom: 10,
-    panControl: !1,
-    zoomControl: !0,
-    mapTypeControl: !1,
-    scaleControl: !1,
-    streetViewControl: !1,
-    overviewMapControl: !1,
-    zoomControlOptions: {
-      style: google.maps.ZoomControlStyle.LARGE
-    }
+    
+    mapTypeId: google.maps.MapTypeId.HYBRID ,
+ 
+    zoom: 15
   }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
   var mapType = new google.maps.StyledMapType(style, {
